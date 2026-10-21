@@ -1,7 +1,7 @@
-# Steam Frame NSD Helper and Eye Tracking for standalone VRChat
+# Steam Frame Eye Tracking for VRChat
 
-Fixes OSC startup for standalone VRChat on Steam Frame and sends native eye gaze
-and blinking. Everything runs on the headset and starts automatically with VRChat.
+Fixes OSC startup for VRChat on Steam Frame and sends native eye gaze and blinking.
+Everything runs on the headset and starts automatically with VRChat.
 
 ## Install
 
