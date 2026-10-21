@@ -28,9 +28,11 @@ import ast, pathlib, sys
 for name in ("daemon.py", "runtime.py"):
     ast.parse((pathlib.Path(sys.argv[1]) / name).read_text(), filename=name)
 PY
+export XDG_RUNTIME_DIR="/run/user/$EUID"
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus"
 systemctl --user show-environment >/dev/null
 podman info --format '{{.Host.Arch}}' >/dev/null
-exec 9>"${XDG_RUNTIME_DIR:?Run inside the logged-in Frame session}/frame-vrchat-tracking-install.lock"
+exec 9>"$XDG_RUNTIME_DIR/frame-vrchat-tracking-install.lock"
 flock -n 9 || {
     printf '%s\n' 'An install or uninstall is already running.' >&2
     exit 1

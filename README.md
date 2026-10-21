@@ -8,8 +8,8 @@ Everything runs on the headset and starts automatically with VRChat.
 Enable Developer Mode on the Frame, then run as the SteamOS user:
 
 ```bash
-curl -fL https://github.com/Hackebein/Steam-Frame-VRChat-Standalone-Eyetracking/archive/refs/heads/main.tar.gz -o frame-nsd.tar.gz &&
-tar -xzf frame-nsd.tar.gz &&
+curl -fL https://github.com/Hackebein/Steam-Frame-VRChat-Standalone-Eyetracking/archive/refs/heads/main.tar.gz -o frame-vrchat-eye-tracking.tar.gz &&
+tar -xzf frame-vrchat-eye-tracking.tar.gz &&
 bash Steam-Frame-VRChat-Standalone-Eyetracking-main/install.sh
 ```
 
@@ -31,8 +31,8 @@ bash ~/.local/share/frame-vrchat-tracking/uninstall.sh
 ## Build from source
 
 ```bash
-curl -fL https://github.com/Hackebein/Steam-Frame-VRChat-Standalone-Eyetracking/archive/refs/heads/main.tar.gz -o frame-nsd.tar.gz &&
-tar -xzf frame-nsd.tar.gz &&
+curl -fL https://github.com/Hackebein/Steam-Frame-VRChat-Standalone-Eyetracking/archive/refs/heads/main.tar.gz -o frame-vrchat-eye-tracking.tar.gz &&
+tar -xzf frame-vrchat-eye-tracking.tar.gz &&
 bash Steam-Frame-VRChat-Standalone-Eyetracking-main/build.sh
 ```
 

@@ -25,8 +25,10 @@ unit_path="$HOME/.config/systemd/user/$unit"
     printf '%s\n' 'Installation paths must not be symbolic links.' >&2
     exit 1
 }
+export XDG_RUNTIME_DIR="/run/user/$EUID"
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus"
 systemctl --user show-environment >/dev/null
-exec 9>"${XDG_RUNTIME_DIR:?Run inside the logged-in Frame session}/frame-vrchat-tracking-install.lock"
+exec 9>"$XDG_RUNTIME_DIR/frame-vrchat-tracking-install.lock"
 flock -n 9 || {
     printf '%s\n' 'An install or uninstall is already running.' >&2
     exit 1
