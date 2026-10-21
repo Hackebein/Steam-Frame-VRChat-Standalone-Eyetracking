@@ -1,0 +1,21 @@
+[Unit]
+Description=Standalone VRChat eye tracking for Steam Frame
+Before=app-steam@autostart.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 -B -u "%h/.local/share/frame-vrchat-tracking/daemon.py"
+WorkingDirectory=%h/.local/share/frame-vrchat-tracking
+RuntimeDirectory=frame-vrchat-tracking
+RuntimeDirectoryMode=0700
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=25
+KillMode=control-group
+UMask=0077
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=frame-vrchat-tracking
+
+[Install]
+WantedBy=default.target
