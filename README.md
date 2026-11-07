@@ -1,9 +1,17 @@
 # Steam Frame Eye Tracking for VRChat
 
-Fixes OSC startup for VRChat on Steam Frame and sends native eye gaze and blinking.
-Everything runs on the headset and starts automatically with VRChat.
+## One last update
 
-## Install
+I started this because OSC wouldn't start in standalone VRChat on my Steam Frame.
+I only wanted to fix OSC, but once I had a workaround, I used it to forward face tracking data, too.
+That grew into this add-on, which runs on the headset and starts automatically with VRChat.
+
+Since then, Valve has re-enabled Android Network Service Discovery (NSD) in Lepton 3.0.9 so VRChat can start OSC.
+The famous Project Babble also released a [Frame Runtime](https://github.com/Project-Babble/Babble-Frame-Runtime) that offers an on-headset solution.
+
+## Original instructions
+
+### Install
 
 Enable Developer Mode on the Frame, then run as the SteamOS user:
 
@@ -16,7 +24,7 @@ bash Steam-Frame-VRChat-Standalone-Eyetracking-main/install.sh
 Launch VRChat, enable **Action Menu → Options → OSC → Enabled**.
 After installing or updating, fully close and reopen VRChat.
 
-## Uninstall
+### Uninstall
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Hackebein/Steam-Frame-VRChat-Standalone-Eyetracking/main/uninstall.sh | bash
@@ -28,7 +36,7 @@ or
 bash ~/.local/share/frame-vrchat-tracking/uninstall.sh
 ```
 
-## Build from source
+### Build from source
 
 ```bash
 curl -fL https://github.com/Hackebein/Steam-Frame-VRChat-Standalone-Eyetracking/archive/refs/heads/main.tar.gz -o frame-vrchat-eye-tracking.tar.gz &&
